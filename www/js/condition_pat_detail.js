@@ -62,10 +62,18 @@ for(a=0;a<patient_detaias_array.length;a++){
 }
 //alert(pat_id_last+'pat_id_last');
 
+   navigator.geolocation.getCurrentPosition(onSuccess, onError);  
 
+      function onSuccess(position) {
 
-var lat_hosp ='13.0845423';
-var long_hosp ='80.2131677';
+        lat_hosp = position.coords.latitude;
+        long_hosp = position.coords.longitude;
+
+//alert(lat_hosp+'lat_hosp');
+//alert(long_hosp+'long_hosp');
+
+/*var lat_hosp ='89';
+var long_hosp ='234';*/
 
 
   $.ajax({
@@ -79,24 +87,30 @@ var long_hosp ='80.2131677';
   error: onErrorasdfa
 });
 
-      
+      }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
 
        function onSuccesspatid(data){
 alert('Submitted Successfully');
 sessionStorage.setItem("twokm",JSON.stringify(data));
 twokm =  JSON.parse(sessionStorage.getItem("twokm"));
-//alert(twokm+'twokm');
-var pat_id_lasta = pat_id_last;
-
-sessionStorage.setItem("pat_id_lasts",JSON.stringify(pat_id_lasta));
 document.getElementById('pat_name').value = '';
       document.getElementById('mob_no').value = '';
       document.getElementById('age_n').value='';
-     $.mobile.changePage($('#question_li'), { transition: "none", changeHash: true, reverse: false });
+//alert(twokm+'twokm')
+//alert('ssssssswsssssss            okkkkkkkkkkkk');
+var pat_id_lasta = pat_id_last;
+
+sessionStorage.setItem("pat_id_lasts",JSON.stringify(pat_id_lasta));
+  $.mobile.changePage($('#question_li'), { transition: "none", changeHash: true, reverse: false });
 
      return false;
-alert('ssssssswsssssss            okkkkkkkkkkkk');
-
      }
           function onErrorasdfa(data){
 alert('errrrr drttttttttttttttttt');
@@ -107,7 +121,7 @@ alert('errrrr drttttttttttttttttt');
 alert('errrrr');
      }
 
-
+    
 /*$.ajax({
  
   url: "http://staging.eimpressive.com/slim/slim-heart-mergedb/pat_detai_inser.php?pat_name="+pat_name+"&age_nn="+age_nn+"&gender_d="+gender_d+"&mob_no="+mob_no+"&condition_emer="+condition_emer+"&lat_hosp="+lat_hosp+"&long_hosp="+long_hosp,
