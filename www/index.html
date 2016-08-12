@@ -102,7 +102,8 @@ return false;
 }
 .rwa {
     /* background-color: #2a303c!important; */
-    background-color: #425B93!important;
+    /*background-color: #425B93!important;*/
+        background-color: rgb(32, 122, 144) !important;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -117,7 +118,11 @@ return false;
     left: 20%;
     right: 20%;
 }
+.bg-radio-col{
+    background-color:#58a698!important;
+}
 </style>
+
 
 			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
 
@@ -178,24 +183,24 @@ return false;
                            
         <div class="ui-block-a gender_1">
 	    
-	    <legend style="padding: 5px 0px 0px 13px;">Gender</legend> 
+	    <legend style="padding: 15px 0px 0px 13px;">Gender</legend> 
 
          </div>
         <div class="ui-block-b gender_2">
           <input type="radio" name="gender_de" id="radio-choice-1b"  value="male" checked="checked">
-           <label for="radio-choice-1b" class="select_age">Male</label> 
+           <label for="radio-choice-1b" class="select_age bg-radio-col" style="background-color:#EBEBEB !important">Male</label> 
          </div>
         <div class="ui-block-c gender_3">
           <input type="radio" name="gender_de" id="radio-choice-2b" value="female">
-           <label for="radio-choice-2b" class="select_age">Female</label> 
+           <label for="radio-choice-2b" class="select_age bg-radio-col" style="background-color:#EBEBEB !important">Female</label> 
         </div>
                      
         </fieldset> 
 
         <!--   <p id="geolocation">Waiting for location...</p> -->
         
-
     </div>
+
     <br>
  <div class="row " style="margin-left:5px;margin-right:5px">
  <label  for="textarea2b" class="fnt1 lega rwa" >Patient Mobile Number</label>

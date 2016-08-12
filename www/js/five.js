@@ -139,7 +139,7 @@ var img_id = element.attr("id");
 alert(img_id+'img_id');
 });*/
 $(document).off('click', '#chatSendBut_qu').on('click', '#chatSendBut_qu', function() { 
-alert('chat chatSendBut_qu    asdf');
+//alert('chat chatSendBut_qu    asdf');
 
 var chstpain = $('input:radio[name=chestpainit]:checked').val();
 //alert(chstpain+'chstpain');
@@ -227,9 +227,9 @@ url: "http://staging.eimpressive.com/slim/slim-heart-mergedb/inser_radio.php?chs
 });
 
 function onSuccessyu(data){
-	alert('sssssssuc');
-	alert('oikjas');
-	$("#positionWindow").popup('open');
+	alert('Successfully Submitted');
+	//alert('oikjas');
+	//$("#positionWindow").popup('open');
 	document.getElementById('anyop').value = '';
 	$.mobile.changePage($('#sear_nearby_mapp'), { transition: "none", changeHash: true, reverse: false });
 }
